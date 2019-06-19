@@ -109,6 +109,12 @@ body {
   transform: translate(-50%);
   background-color: white;
 }
+.article .closeBtn {
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
 .article-open {
   height: 400px;
 }
