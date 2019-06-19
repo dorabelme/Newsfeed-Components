@@ -30,3 +30,6 @@ class Article {
 
 let articles = document.querySelectorAll(".article");
 articles.forEach(article => new Article(article));
+
+allArticles.addEventListener("click", () => TweenLite.to(menu, 1, { left: "-300px" })
+);
