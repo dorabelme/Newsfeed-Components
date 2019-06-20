@@ -19,23 +19,17 @@ class Article {
 
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
-    this.domElement.classList.toggle("article-open");
-  
+      this.domElement.classList.toggle("article-open");
+
     if(this.domElement.classList.length > 1) {
       TweenLite.to(this.domElement, 1, {height: '450px'});
+      this.expandButton.innerText = "Collapse";
     }
     else {
       TweenLite.to(this.domElement, 1, {height: '50px'});
+       this.expandButton.innerText = "Click to Expand";
     }
   }
-
-
-
-
-
-
-
-
 
   closeArticle(){
     container.removeChild(this.domElement);
@@ -51,8 +45,8 @@ class Article {
 
 */
 
-let container = document.querySelector(".articles");
-let articles = document.querySelectorAll(".article");
+const container = document.querySelector(".articles");
+const articles = document.querySelectorAll(".article");
 articles.forEach(article => new Article(article));
 
 // let addButton = document.querySelector(".addArticle");

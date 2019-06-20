@@ -1,13 +1,14 @@
 
 // Start Here: Create a reference to the ".menu" class
 const menu = document.querySelector(".menu");
+menu.style.left = "-400px";
 
 // create a reference to the ".menu-button" class
 const menuButton = document.querySelector(".menu-button") ;
 
 const toggleMenu = function() {
-  // Toggle the "menu--open" class on your menu refence.
   menu.classList.toggle("menu--open");
+  // Toggle the "menu--open" class on your menu refence.  
   if (menu.classList.length > 1) TweenLite.to(menu, 1, { left: 0 });
   else TweenLite.to(menu, 1, { left: "-400px" });
 };
@@ -20,8 +21,8 @@ page.addEventListener("click", () => {
   TweenLite.to(menu, 1, { left: "-400px" });
 })
 
-let addButton = document.createElement("li");
+const addButton = document.createElement("li");
 addButton.textContent = "Add New Article";
 addButton.classList.add(".addArticle")
-let list = document.querySelector(".menu ul");
+const list = document.querySelector(".menu ul");
 list.appendChild(addButton);
