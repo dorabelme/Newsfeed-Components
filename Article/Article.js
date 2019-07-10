@@ -112,3 +112,54 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+let articleAccordion = document.querySelector(".articles");
+data.forEach(newArticle => {
+  articleAccordion.appendChild(createArticle(
+    newArticle.title,
+    newArticle.date,
+    newArticle.firstParagraph,
+    newArticle.secondParagraph,
+    newArticle.thirdParagraph,
+  ))
+});
+
+function createArticle(title, date, parag1, parag2, parag3) {
+  // define new elements
+  const newArticle = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement("p");
+  const paragraph3 = document.createElement("p");
+  const expandBtn = document.createElement("span");
+
+  // setup structure of elements
+  newArticle.appendChild(articleTitle);
+  newArticle.appendChild(articleDate);
+  newArticle.appendChild(paragraph1, paragraph2, paragraph3);
+  newArticle.appendChild(expandBtn);
+
+  // add class names
+  newArticle.classList.add('article');
+  articleDate.classList.add('date');
+  expandBtn.classList.add('expandButton');
+
+  // set text content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  paragraph1.textContent = parag1;
+  paragraph2.textContent = parag2;
+  paragraph3.textContent = parag3;
+  expandBtn.textContent = "Expand Button";
+
+
+  expandBtn.addEventListener("click", event => {
+    newArticle.classList.toggle("article-open")
+  })
+
+  return newArticle;
+}
+
+
+
