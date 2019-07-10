@@ -133,17 +133,20 @@ function createArticle(title, date, parag1, parag2, parag3) {
   const paragraph2 = document.createElement("p");
   const paragraph3 = document.createElement("p");
   const expandBtn = document.createElement("span");
+  const closeBtn = document.createElement("span");
 
   // setup structure of elements
   newArticle.appendChild(articleTitle);
   newArticle.appendChild(articleDate);
   newArticle.appendChild(paragraph1, paragraph2, paragraph3);
   newArticle.appendChild(expandBtn);
+  newArticle.appendChild(closeBtn);
 
   // add class names
   newArticle.classList.add('article');
   articleDate.classList.add('date');
   expandBtn.classList.add('expandButton');
+  closeBtn.classList.add("closeBtn");
 
   // set text content
   articleTitle.textContent = title;
@@ -152,6 +155,7 @@ function createArticle(title, date, parag1, parag2, parag3) {
   paragraph2.textContent = parag2;
   paragraph3.textContent = parag3;
   expandBtn.textContent = "Expand Button";
+  closeBtn.textContent = "Click to Close";
 
 
   expandBtn.addEventListener("click", event => {
@@ -161,5 +165,54 @@ function createArticle(title, date, parag1, parag2, parag3) {
   return newArticle;
 }
 
+
+
+// Made an component constructor function 2 weeks ago
+
+// const container = document.querySelector(".articles");
+// const articles = document.querySelectorAll(".article");
+// articles.forEach(article => new Article(article));
+
+// // let addButton = document.querySelector(".addArticle");
+// addButton.addEventListener("click", () => {
+//   articleBuilder({
+//     h2: "Testing Article Builder!",
+//     date: "June 19th, 2019",
+//     p1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+//     p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+//   })
+// });
+
+
+// function articleBuilder(sample){
+//   const article = document.createElement("div");
+//   article.classList.add("article");
+//   const h2 = document.createElement("h2");
+//   h2.textContent = sample.h2;
+//   const date = document.createElement("p");
+//   date.classList.add("date");
+//   date.textContent = sample.date;
+//   const p1 = document.createElement("p");
+//   p1.textContent = sample.p1;
+//   const p2 = document.createElement("p");
+//   p2.textContent = sample.p2;
+//   const expandBtn = document.createElement("span");
+//   expandBtn.classList.add("expandButton");
+//   expandBtn.textContent = "expand";
+//   const closeBtn = document.createElement("span");
+//   closeBtn.classList.add("closeBtn");
+//   closeBtn.textContent = "Click to Close";
+
+//   container.appendChild(article);
+//   article.appendChild(h2);
+//   article.appendChild(date);
+//   article.appendChild(p1);
+//   article.appendChild(p2);
+//   article.appendChild(expandBtn);
+//   article.appendChild(closeBtn);
+
+//   const product = new Article(article);
+//   return product;
+// }
 
 

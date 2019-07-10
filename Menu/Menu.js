@@ -61,3 +61,26 @@ function createMenu(menuItems) {
 
 const menuDisplay = createMenu(menuItems);
 header.appendChild(menuDisplay);
+
+const addButton = document.createElement("li");
+addButton.textContent = "Add New Article";
+addButton.classList.add("addArticle");
+const list = document.querySelector(".menu ul");
+list.appendChild(addButton);
+
+
+
+const newMenu = document.querySelector(".menu");
+newMenu.style.left = "-400px";
+
+const toggleMenu = function() { 
+  if (newMenu.classList.length > 1) TweenLite.to(newMenu, 1, { left: 0 });
+  else TweenLite.to(newMenu, 1, { left: "-400px" });
+};
+
+menuButton.addEventListener("click", toggleMenu);
+
+const page = document.querySelector(".articles");
+page.addEventListener("click", () => {
+  TweenLite.to(newMenu, 1, { left: "-400px" });
+})
