@@ -70,7 +70,6 @@ Note: Just a reminder the stretch goals are just extra practice using the tools 
   * Animation Goal #2 Animate the article opening. This one is a bit trickier. You will need to change the CSS for this component as well. Animate the component so that it slides open and slides closed on each click. Update the text in the expand button to read `'Click to Expand'` or `'Click to Close'` depending on the state of the article. 
 
 * Close Button
-
   Add a close (or 'read') button to each Article component. When clicked the article will disappear.
 
 * Component Constructor
